@@ -22,7 +22,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { signOut, useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
 
 const drawerWidth = 240;
 
@@ -58,8 +58,6 @@ const menuListIcons = [
 
 const SideMenu = () => {
   const theme = useTheme();
-  const { data: session } = useSession();
-
   const [open, setOpen] = React.useState(false);
   const mobileCheck = useMediaQuery("(min-width: 600px)");
 
