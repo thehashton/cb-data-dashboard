@@ -23,7 +23,6 @@ import {
   useTheme,
 } from "@mui/material";
 import { signOut, useSession } from "next-auth/react";
-import { useRouter } from "next/router";
 
 const drawerWidth = 240;
 
@@ -60,7 +59,6 @@ const menuListIcons = [
 const SideMenu = () => {
   const theme = useTheme();
   const { data: session } = useSession();
-  const { asPath } = useRouter();
 
   const [open, setOpen] = React.useState(false);
   const mobileCheck = useMediaQuery("(min-width: 600px)");
@@ -115,9 +113,7 @@ const SideMenu = () => {
           <ListItem key={text} disablePadding sx={{ display: "block" }}>
             <NextLink
               className={scss.link}
-              href={
-                text === "Sign Out" ? "/" : `/dashboard/${menuRouteList[index]}`
-              }
+              href={`/dashboard/${menuRouteList[index]}`}
             >
               <ListItemButton
                 onClick={() => handleListItemButtonClick(text)}
