@@ -36,6 +36,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }) => {
       }),
     [mode]
   );
+
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider
