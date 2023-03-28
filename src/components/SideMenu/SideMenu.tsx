@@ -5,7 +5,6 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import Person2Icon from "@mui/icons-material/Person2";
-import HomeIcon from "@mui/icons-material/Home";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
 import { Settings } from "@mui/icons-material";
 import NextLink from "next/link";
@@ -23,7 +22,8 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const drawerWidth = 240;
 
@@ -59,6 +59,9 @@ const menuListIcons = [
 
 const SideMenu = () => {
   const theme = useTheme();
+  const { data: session } = useSession();
+  const { asPath } = useRouter();
+
   const [open, setOpen] = React.useState(false);
   const mobileCheck = useMediaQuery("(min-width: 600px)");
 
@@ -112,7 +115,9 @@ const SideMenu = () => {
           <ListItem key={text} disablePadding sx={{ display: "block" }}>
             <NextLink
               className={scss.link}
-              href={`/dashboard/${menuRouteList[index]}`}
+              href={
+                text === "Sign Out" ? "/" : `/dashboard/${menuRouteList[index]}`
+              }
             >
               <ListItemButton
                 onClick={() => handleListItemButtonClick(text)}
