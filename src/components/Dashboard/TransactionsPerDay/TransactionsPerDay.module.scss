@@ -1,0 +1,57 @@
+$breakPoint: 1000px;
+
+.wrapper {
+  display: flex;
+}
+
+.transactions {
+  display: block;
+  padding: 1rem 2rem;
+  width: 100%;
+
+  @media screen and (min-width: $breakPoint) {
+    display: flex;
+  }
+}
+
+.chart {
+  max-width: 100%;
+  width: 100%;
+
+  @media screen and (min-width: $breakPoint) {
+    max-width: 80%;
+  }
+}
+
+.cardWrapper {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-evenly;
+  max-width: 100%;
+  width: 100%;
+
+  @media screen and (min-width: $breakPoint) {
+    flex-direction: column;
+    max-width: 20%;
+  }
+}
+
+.card {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 100%;
+
+  @media screen and (min-width: $breakPoint) {
+    padding: 0.5rem;
+  }
+}
+
+.cardTitle p {
+  font-size: 1.8rem
+}
+
+.cardValue p {
+  font-size: 1.2rem
+}
