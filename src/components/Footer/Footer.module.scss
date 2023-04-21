@@ -1,9 +1,9 @@
 .footer {
-  position: static;
-  bottom: 0;
+  position: absolute;
+  bottom: -1rem;
   left: 0;
+  right: 0;
   width: 100%;
-  margin-top: 5rem;
 
   ul {
     display: flex;
