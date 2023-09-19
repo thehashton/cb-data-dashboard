@@ -1,7 +1,20 @@
+import Login from "@/components/Login";
+import { Box, Typography } from "@mui/material";
+import { useSession } from "next-auth/react";
 
 const SignIn = () => {
+    const { data: session } = useSession()
+
     return (
-        <h1>Sign in</h1>
+        <Box sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center'
+        }}>
+            <Typography variant="h3" component="h2">{session ? 'Thank you for logging in' : 'Please lon in'}</Typography>
+            <Login />
+        </Box>
     )
 }
 
