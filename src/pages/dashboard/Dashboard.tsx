@@ -1,5 +1,4 @@
-import React from 'react';
-import {Box, Grid, Paper} from "@mui/material";
+import { Box, Grid, Paper } from "@mui/material";
 import scss from './Dashboard.module.scss';
 
 const Dashboard = () => {

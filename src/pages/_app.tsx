@@ -1,14 +1,14 @@
-import { SessionProvider } from "next-auth/react";
-import React from "react";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { CssBaseline } from "@mui/material";
-import darkTheme from "@/theme/darkTheme";
-import lightTheme from "@/theme/lightTheme";
 import Header from "@/components/Header";
 import Layout from "@/components/Layout";
+import darkTheme from "@/theme/darkTheme";
+import lightTheme from "@/theme/lightTheme";
+import { CssBaseline } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { SessionProvider } from "next-auth/react";
+import React from "react";
 
 const ColorModeContext = React.createContext({
-  toggleColorMode: () => {},
+  toggleColorMode: () => { },
 });
 
 const App = ({ Component, pageProps: { session, ...pageProps } }) => {

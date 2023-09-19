@@ -1,18 +1,24 @@
-import {ThemeOptions} from "@mui/material";
+import { ThemeOptions } from "@mui/material";
 
 const lightTheme: ThemeOptions = {
     palette: {
         mode: 'light',
         primary: {
-            main: '#ffff00',
+            main: '#66BD51',
         },
         secondary: {
-            main: '#ff8400',
+            main: '#529741',
         },
         background: {
-            default: '#9e9e9e'
-        }
-    }
+            default: '#efefef',
+        },
+        error: {
+            main: '#e04562',
+        },
+    },
+    typography: {
+        fontFamily: 'Figtree',
+    },
 }
 
 export default lightTheme;
