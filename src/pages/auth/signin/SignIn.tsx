@@ -12,7 +12,7 @@ const SignIn = () => {
             justifyContent: 'center',
             alignItems: 'center'
         }}>
-            <Typography variant="h3" component="h2">{session ? 'Thank you for logging in' : 'Please lon in'}</Typography>
+            <Typography variant="h3" component="h2">{session ? 'Thank you for signing in' : 'Please Log In'}</Typography>
             <Login />
         </Box>
     )

@@ -1,15 +1,14 @@
-import { CSSObject } from "@mui/system";
-import * as React from "react";
-import IconButton from "@mui/material/IconButton";
+import { Settings } from "@mui/icons-material";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import ExitToAppIcon from "@mui/icons-material/ExitToApp";
-import Person2Icon from "@mui/icons-material/Person2";
-import HomeIcon from "@mui/icons-material/Home";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
-import { Settings } from "@mui/icons-material";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import HomeIcon from "@mui/icons-material/Home";
+import Person2Icon from "@mui/icons-material/Person2";
+import IconButton from "@mui/material/IconButton";
+import { CSSObject } from "@mui/system";
 import NextLink from "next/link";
-import scss from "./SideMenu.module.scss";
+import * as React from "react";
 
 import {
   Divider,
@@ -48,9 +47,10 @@ const closedMixin = (theme: Theme): CSSObject => ({
   },
 });
 
-const menuRouteList = ["data", "profile", "settings", ""];
-const menuListTranslations = ["Data", "Profile", "Settings", "Sign Out"];
+const menuRouteList = ["", "data", "profile", "settings", ""];
+const menuListTranslations = ["Home", "Data", "Profile", "Settings", "Sign Out"];
 const menuListIcons = [
+  <HomeIcon />,
   <EqualizerIcon />,
   <Person2Icon />,
   <Settings />,
@@ -76,7 +76,6 @@ const SideMenu = () => {
       variant="permanent"
       anchor="left"
       open={open}
-      className={scss.sideMenu}
       sx={{
         width: drawerWidth,
         [`& .MuiDrawer-paper`]: {
@@ -96,7 +95,7 @@ const SideMenu = () => {
         },
       }}
     >
-      <div className={scss.drawerHeader}>
+      <div>
         <IconButton onClick={handleDrawerToggle}>
           {theme.direction === "rtl" ? (
             <ChevronRightIcon />
@@ -111,7 +110,6 @@ const SideMenu = () => {
         {menuListTranslations.map((text, index) => (
           <ListItem key={text} disablePadding sx={{ display: "block" }}>
             <NextLink
-              className={scss.link}
               href={`/dashboard/${menuRouteList[index]}`}
             >
               <ListItemButton
